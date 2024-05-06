@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace UltimatePath
+namespace UltimateFolderPath
 {
     [System.Serializable]
     public class ProjectFolderPath : FolderPath

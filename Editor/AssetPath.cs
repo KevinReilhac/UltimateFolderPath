@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 
-namespace UltimatePath
+namespace UltimateFolderPath
 {
     public class AssetFolderPath : ProjectFolderPath, IAssetLoadableFolderPath
     {
