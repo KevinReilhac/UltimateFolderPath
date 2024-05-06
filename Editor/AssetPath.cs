@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace UltimateFolderPath
 {
+    [System.Serializable]
     public class AssetFolderPath : ProjectFolderPath, IAssetLoadableFolderPath
     {
         public AssetFolderPath(string path) : base(path)
