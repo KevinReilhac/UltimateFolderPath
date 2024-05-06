@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using PathUtils = System.IO.Path;
 
-namespace UltimatePath
+namespace UltimateFolderPath
 {
     [System.Serializable]
     public class FolderPath

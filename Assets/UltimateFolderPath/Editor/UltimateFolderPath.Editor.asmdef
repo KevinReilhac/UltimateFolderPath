@@ -1,5 +1,5 @@
 {
-    "name": "UltimatePath.Editor",
+    "name": "UltimateFolderPath.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:199dd1eb961477f41a1f2090e5998d92"

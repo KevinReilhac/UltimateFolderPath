@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace UltimatePath
+namespace UltimateFolderPath
 {
     [CustomPropertyDrawer(typeof(FolderPath), true)]
     internal class PathPropertyDrawer : PropertyDrawer

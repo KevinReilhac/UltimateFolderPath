@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace UltimatePath
+namespace UltimateFolderPath
 {
     internal static class StringExtention
     {

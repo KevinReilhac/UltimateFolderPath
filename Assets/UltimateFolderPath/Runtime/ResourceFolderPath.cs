@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-namespace UltimatePath
+namespace UltimateFolderPath
 {
     public class ResourceFolderPath : FolderPath, IAssetLoadableFolderPath
     {
