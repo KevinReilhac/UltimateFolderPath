@@ -7,7 +7,7 @@
   "api/UltimateFolderPath.FolderPath.html": {
     "href": "api/UltimateFolderPath.FolderPath.html",
     "title": "Class FolderPath | Ultimate Folder Path",
-    "keywords": "Class FolderPath Inheritance Object FolderPath ProjectFolderPath ResourceFolderPath StreamingAssetsPath Namespace : UltimateFolderPath Assembly : cs.temp.dll.dll Syntax [Serializable] public class FolderPath Constructors FolderPath(String) Declaration public FolderPath(string path) Parameters Type Name Description String path Fields _path Declaration public string _path Field Value Type Description String Properties AbsolutePath Declaration public string AbsolutePath { get; } Property Value Type Description String RelativePath Declaration public string RelativePath { get; } Property Value Type Description String RelativeTo Declaration public virtual string RelativeTo { get; } Property Value Type Description String Methods GetAllFiles(Boolean) Declaration public string[] GetAllFiles(bool relative = true) Parameters Type Name Description Boolean relative Returns Type Description String [] Operators Implicit(FolderPath to String) Declaration public static implicit operator string (FolderPath f) Parameters Type Name Description FolderPath f Returns Type Description String"
+    "keywords": "Class FolderPath Inheritance Object FolderPath ProjectFolderPath ResourceFolderPath StreamingAssetsPath Namespace : UltimateFolderPath Assembly : cs.temp.dll.dll Syntax [Serializable] public class FolderPath Constructors FolderPath(String) Declaration public FolderPath(string path) Parameters Type Name Description String path Fields _path Declaration public string _path Field Value Type Description String Properties AbsolutePath Declaration public string AbsolutePath { get; } Property Value Type Description String RelativePath Declaration public string RelativePath { get; } Property Value Type Description String RelativeTo Declaration public virtual string RelativeTo { get; } Property Value Type Description String Methods GetAllFiles(Boolean) Declaration public string[] GetAllFiles(bool relative = true) Parameters Type Name Description Boolean relative Returns Type Description String []"
   },
   "api/UltimateFolderPath.html": {
     "href": "api/UltimateFolderPath.html",
@@ -37,7 +37,7 @@
   "api/UltimateFolderPath.TestScript.html": {
     "href": "api/UltimateFolderPath.TestScript.html",
     "title": "Class TestScript | Ultimate Folder Path",
-    "keywords": "Class TestScript Inheritance Object TestScript Namespace : UltimateFolderPath Assembly : cs.temp.dll.dll Syntax public class TestScript : MonoBehaviour Fields folderPath Declaration public FolderPath folderPath Field Value Type Description FolderPath projectFolderPath Declaration public ProjectFolderPath projectFolderPath Field Value Type Description ProjectFolderPath streamingAssetsPath Declaration public StreamingAssetsPath streamingAssetsPath Field Value Type Description StreamingAssetsPath"
+    "keywords": "Class TestScript Inheritance Object TestScript Namespace : UltimateFolderPath Assembly : cs.temp.dll.dll Syntax public class TestScript : MonoBehaviour Fields assetFolderPath Declaration public AssetFolderPath assetFolderPath Field Value Type Description AssetFolderPath"
   },
   "index.html": {
     "href": "index.html",

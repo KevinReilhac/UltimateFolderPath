@@ -122,25 +122,6 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.FolderPath.GetAllFiles
   nameWithType: FolderPath.GetAllFiles
-- uid: UltimateFolderPath.FolderPath.op_Implicit(UltimateFolderPath.FolderPath)~System.String
-  name: Implicit(FolderPath to String)
-  href: api/UltimateFolderPath.FolderPath.html#UltimateFolderPath_FolderPath_op_Implicit_UltimateFolderPath_FolderPath__System_String
-  commentId: M:UltimateFolderPath.FolderPath.op_Implicit(UltimateFolderPath.FolderPath)~System.String
-  name.vb: Widening(FolderPath to String)
-  fullName: UltimateFolderPath.FolderPath.Implicit(UltimateFolderPath.FolderPath to System.String)
-  fullName.vb: UltimateFolderPath.FolderPath.Widening(UltimateFolderPath.FolderPath to System.String)
-  nameWithType: FolderPath.Implicit(FolderPath to String)
-  nameWithType.vb: FolderPath.Widening(FolderPath to String)
-- uid: UltimateFolderPath.FolderPath.op_Implicit*
-  name: Implicit
-  href: api/UltimateFolderPath.FolderPath.html#UltimateFolderPath_FolderPath_op_Implicit_
-  commentId: Overload:UltimateFolderPath.FolderPath.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: UltimateFolderPath.FolderPath.Implicit
-  fullName.vb: UltimateFolderPath.FolderPath.Widening
-  nameWithType: FolderPath.Implicit
-  nameWithType.vb: FolderPath.Widening
 - uid: UltimateFolderPath.FolderPath.RelativePath
   name: RelativePath
   href: api/UltimateFolderPath.FolderPath.html#UltimateFolderPath_FolderPath_RelativePath
@@ -339,21 +320,9 @@ references:
   commentId: T:UltimateFolderPath.TestScript
   fullName: UltimateFolderPath.TestScript
   nameWithType: TestScript
-- uid: UltimateFolderPath.TestScript.folderPath
-  name: folderPath
-  href: api/UltimateFolderPath.TestScript.html#UltimateFolderPath_TestScript_folderPath
-  commentId: F:UltimateFolderPath.TestScript.folderPath
-  fullName: UltimateFolderPath.TestScript.folderPath
-  nameWithType: TestScript.folderPath
-- uid: UltimateFolderPath.TestScript.projectFolderPath
-  name: projectFolderPath
-  href: api/UltimateFolderPath.TestScript.html#UltimateFolderPath_TestScript_projectFolderPath
-  commentId: F:UltimateFolderPath.TestScript.projectFolderPath
-  fullName: UltimateFolderPath.TestScript.projectFolderPath
-  nameWithType: TestScript.projectFolderPath
-- uid: UltimateFolderPath.TestScript.streamingAssetsPath
-  name: streamingAssetsPath
-  href: api/UltimateFolderPath.TestScript.html#UltimateFolderPath_TestScript_streamingAssetsPath
-  commentId: F:UltimateFolderPath.TestScript.streamingAssetsPath
-  fullName: UltimateFolderPath.TestScript.streamingAssetsPath
-  nameWithType: TestScript.streamingAssetsPath
+- uid: UltimateFolderPath.TestScript.assetFolderPath
+  name: assetFolderPath
+  href: api/UltimateFolderPath.TestScript.html#UltimateFolderPath_TestScript_assetFolderPath
+  commentId: F:UltimateFolderPath.TestScript.assetFolderPath
+  fullName: UltimateFolderPath.TestScript.assetFolderPath
+  nameWithType: TestScript.assetFolderPath
