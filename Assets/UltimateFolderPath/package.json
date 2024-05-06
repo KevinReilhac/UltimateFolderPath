@@ -1,0 +1,20 @@
+{
+    "name": "com.kebab.ultimate_folder_path",
+    "version": "0.0.1",
+    "displayName": "Ultimate Folder Path",
+    "description": "Serializable Relative Dolder path",
+    "unity": "2022.3",
+    "unityRelease": "21f1",
+    "documentationUrl": "https://kevinreilhac.github.io/UltimateFolderPath/",
+    "changelogUrl": "",
+    "licensesUrl": "",
+    "dependencies": {},
+   "keywords": [
+    ],
+    "author": {
+      "name": "Kevin \"Kebab\"",
+      "email": "kevin.reilhac.pro@gmail.com",
+      "url": "https://github.com/KevinReilhac"
+    }
+  }
+  
