@@ -7,8 +7,12 @@ namespace UltimateFolderPath
 {
     public class TestScript : MonoBehaviour
     {
-        public FolderPath folderPath;
-        public ProjectFolderPath projectFolderPath;
-        public StreamingAssetsPath streamingAssetsPath;
+        public AssetFolderPath assetFolderPath;
+
+        private void Awake()
+        {
+            Debug.Log(assetFolderPath.AbsolutePath);
+            Debug.Log(assetFolderPath.RelativePath);
+        }
     }
 }
