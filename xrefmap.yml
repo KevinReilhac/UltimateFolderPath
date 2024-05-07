@@ -26,6 +26,32 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.AssetFolderPath.AssetFolderPath
   nameWithType: AssetFolderPath.AssetFolderPath
+- uid: UltimateFolderPath.AssetFolderPath.AssetPath
+  name: AssetPath
+  href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_AssetPath
+  commentId: P:UltimateFolderPath.AssetFolderPath.AssetPath
+  fullName: UltimateFolderPath.AssetFolderPath.AssetPath
+  nameWithType: AssetFolderPath.AssetPath
+- uid: UltimateFolderPath.AssetFolderPath.AssetPath*
+  name: AssetPath
+  href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_AssetPath_
+  commentId: Overload:UltimateFolderPath.AssetFolderPath.AssetPath
+  isSpec: "True"
+  fullName: UltimateFolderPath.AssetFolderPath.AssetPath
+  nameWithType: AssetFolderPath.AssetPath
+- uid: UltimateFolderPath.AssetFolderPath.GetAssetFilePath(System.String)
+  name: GetAssetFilePath(String)
+  href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_GetAssetFilePath_System_String_
+  commentId: M:UltimateFolderPath.AssetFolderPath.GetAssetFilePath(System.String)
+  fullName: UltimateFolderPath.AssetFolderPath.GetAssetFilePath(System.String)
+  nameWithType: AssetFolderPath.GetAssetFilePath(String)
+- uid: UltimateFolderPath.AssetFolderPath.GetAssetFilePath*
+  name: GetAssetFilePath
+  href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_GetAssetFilePath_
+  commentId: Overload:UltimateFolderPath.AssetFolderPath.GetAssetFilePath
+  isSpec: "True"
+  fullName: UltimateFolderPath.AssetFolderPath.GetAssetFilePath
+  nameWithType: AssetFolderPath.GetAssetFilePath
 - uid: UltimateFolderPath.AssetFolderPath.LoadAsset*
   name: LoadAsset
   href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_LoadAsset_
@@ -314,6 +340,25 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.StreamingAssetsPath.RelativeTo
   nameWithType: StreamingAssetsPath.RelativeTo
+- uid: UltimateFolderPath.StringExtention
+  name: StringExtention
+  href: api/UltimateFolderPath.StringExtention.html
+  commentId: T:UltimateFolderPath.StringExtention
+  fullName: UltimateFolderPath.StringExtention
+  nameWithType: StringExtention
+- uid: UltimateFolderPath.StringExtention.ClearPath(System.String)
+  name: ClearPath(String)
+  href: api/UltimateFolderPath.StringExtention.html#UltimateFolderPath_StringExtention_ClearPath_System_String_
+  commentId: M:UltimateFolderPath.StringExtention.ClearPath(System.String)
+  fullName: UltimateFolderPath.StringExtention.ClearPath(System.String)
+  nameWithType: StringExtention.ClearPath(String)
+- uid: UltimateFolderPath.StringExtention.ClearPath*
+  name: ClearPath
+  href: api/UltimateFolderPath.StringExtention.html#UltimateFolderPath_StringExtention_ClearPath_
+  commentId: Overload:UltimateFolderPath.StringExtention.ClearPath
+  isSpec: "True"
+  fullName: UltimateFolderPath.StringExtention.ClearPath
+  nameWithType: StringExtention.ClearPath
 - uid: UltimateFolderPath.TestScript
   name: TestScript
   href: api/UltimateFolderPath.TestScript.html
