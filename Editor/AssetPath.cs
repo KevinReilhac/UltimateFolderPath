@@ -18,7 +18,14 @@ namespace UltimateFolderPath
 
         public T LoadAsset<T>(string path) where T : Object
         {
-            return AssetDatabase.LoadAssetAtPath<T>(Path.Join(RelativePath, path));
+            return AssetDatabase.LoadAssetAtPath<T>(GetAssetFilePath(path));
+        }
+
+        public string AssetPath => Path.Join("Assets", RelativePath).ClearPath();
+
+        public string GetAssetFilePath(string fileName)
+        {
+            return Path.Join(AssetPath, fileName).ClearPath();
         }
 
         public List<T> LoadAssets<T>() where T : Object
