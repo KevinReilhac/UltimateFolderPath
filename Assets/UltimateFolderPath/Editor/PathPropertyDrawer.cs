@@ -101,7 +101,7 @@ namespace UltimateFolderPath
         {
             var targetObject = property.serializedObject.targetObject;
             var targetObjectClassType = targetObject.GetType();
-            var field = targetObjectClassType.GetField(property.propertyPath);
+            var field = targetObjectClassType.GetField(property.propertyPath, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             if (field != null)
             {
                 var value = field.GetValue(targetObject);
