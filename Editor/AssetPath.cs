@@ -35,7 +35,7 @@ namespace UltimateFolderPath
 
             foreach (var file in files)
             {
-                T asset = AssetDatabase.LoadAssetAtPath<T>(file);
+                T asset = AssetDatabase.LoadAssetAtPath<T>(Path.Join("Assets", file));
                 if (asset != null) assetList.Add(asset);
             }
 
