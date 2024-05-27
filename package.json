@@ -1,6 +1,6 @@
 {
     "name": "com.kebab.ultimate_folder_path",
-    "version": "0.0.1",
+    "version": "0.0.7",
     "displayName": "Ultimate Folder Path",
     "description": "Serializable Relative Dolder path",
     "unity": "2022.3",
