@@ -75,15 +75,15 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.AssetFolderPath.LoadAssets
   nameWithType: AssetFolderPath.LoadAssets
-- uid: UltimateFolderPath.AssetFolderPath.LoadAssets``1
-  name: LoadAssets<T>()
-  href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_LoadAssets__1
-  commentId: M:UltimateFolderPath.AssetFolderPath.LoadAssets``1
-  name.vb: LoadAssets(Of T)()
-  fullName: UltimateFolderPath.AssetFolderPath.LoadAssets<T>()
-  fullName.vb: UltimateFolderPath.AssetFolderPath.LoadAssets(Of T)()
-  nameWithType: AssetFolderPath.LoadAssets<T>()
-  nameWithType.vb: AssetFolderPath.LoadAssets(Of T)()
+- uid: UltimateFolderPath.AssetFolderPath.LoadAssets``1(System.Boolean)
+  name: LoadAssets<T>(Boolean)
+  href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_LoadAssets__1_System_Boolean_
+  commentId: M:UltimateFolderPath.AssetFolderPath.LoadAssets``1(System.Boolean)
+  name.vb: LoadAssets(Of T)(Boolean)
+  fullName: UltimateFolderPath.AssetFolderPath.LoadAssets<T>(System.Boolean)
+  fullName.vb: UltimateFolderPath.AssetFolderPath.LoadAssets(Of T)(System.Boolean)
+  nameWithType: AssetFolderPath.LoadAssets<T>(Boolean)
+  nameWithType.vb: AssetFolderPath.LoadAssets(Of T)(Boolean)
 - uid: UltimateFolderPath.AssetFolderPath.RelativeTo
   name: RelativeTo
   href: api/UltimateFolderPath.AssetFolderPath.html#UltimateFolderPath_AssetFolderPath_RelativeTo
@@ -135,12 +135,12 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.FolderPath.AbsolutePath
   nameWithType: FolderPath.AbsolutePath
-- uid: UltimateFolderPath.FolderPath.GetAllFiles(System.Boolean)
-  name: GetAllFiles(Boolean)
-  href: api/UltimateFolderPath.FolderPath.html#UltimateFolderPath_FolderPath_GetAllFiles_System_Boolean_
-  commentId: M:UltimateFolderPath.FolderPath.GetAllFiles(System.Boolean)
-  fullName: UltimateFolderPath.FolderPath.GetAllFiles(System.Boolean)
-  nameWithType: FolderPath.GetAllFiles(Boolean)
+- uid: UltimateFolderPath.FolderPath.GetAllFiles(System.Boolean,System.Boolean)
+  name: GetAllFiles(Boolean, Boolean)
+  href: api/UltimateFolderPath.FolderPath.html#UltimateFolderPath_FolderPath_GetAllFiles_System_Boolean_System_Boolean_
+  commentId: M:UltimateFolderPath.FolderPath.GetAllFiles(System.Boolean,System.Boolean)
+  fullName: UltimateFolderPath.FolderPath.GetAllFiles(System.Boolean, System.Boolean)
+  nameWithType: FolderPath.GetAllFiles(Boolean, Boolean)
 - uid: UltimateFolderPath.FolderPath.GetAllFiles*
   name: GetAllFiles
   href: api/UltimateFolderPath.FolderPath.html#UltimateFolderPath_FolderPath_GetAllFiles_
@@ -203,15 +203,15 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets
   nameWithType: IAssetLoadableFolderPath.LoadAssets
-- uid: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets``1
-  name: LoadAssets<T>()
-  href: api/UltimateFolderPath.IAssetLoadableFolderPath.html#UltimateFolderPath_IAssetLoadableFolderPath_LoadAssets__1
-  commentId: M:UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets``1
-  name.vb: LoadAssets(Of T)()
-  fullName: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets<T>()
-  fullName.vb: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets(Of T)()
-  nameWithType: IAssetLoadableFolderPath.LoadAssets<T>()
-  nameWithType.vb: IAssetLoadableFolderPath.LoadAssets(Of T)()
+- uid: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets``1(System.Boolean)
+  name: LoadAssets<T>(Boolean)
+  href: api/UltimateFolderPath.IAssetLoadableFolderPath.html#UltimateFolderPath_IAssetLoadableFolderPath_LoadAssets__1_System_Boolean_
+  commentId: M:UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets``1(System.Boolean)
+  name.vb: LoadAssets(Of T)(Boolean)
+  fullName: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets<T>(System.Boolean)
+  fullName.vb: UltimateFolderPath.IAssetLoadableFolderPath.LoadAssets(Of T)(System.Boolean)
+  nameWithType: IAssetLoadableFolderPath.LoadAssets<T>(Boolean)
+  nameWithType.vb: IAssetLoadableFolderPath.LoadAssets(Of T)(Boolean)
 - uid: UltimateFolderPath.ProjectFolderPath
   name: ProjectFolderPath
   href: api/UltimateFolderPath.ProjectFolderPath.html
@@ -286,15 +286,15 @@ references:
   isSpec: "True"
   fullName: UltimateFolderPath.ResourceFolderPath.LoadAssets
   nameWithType: ResourceFolderPath.LoadAssets
-- uid: UltimateFolderPath.ResourceFolderPath.LoadAssets``1
-  name: LoadAssets<T>()
-  href: api/UltimateFolderPath.ResourceFolderPath.html#UltimateFolderPath_ResourceFolderPath_LoadAssets__1
-  commentId: M:UltimateFolderPath.ResourceFolderPath.LoadAssets``1
-  name.vb: LoadAssets(Of T)()
-  fullName: UltimateFolderPath.ResourceFolderPath.LoadAssets<T>()
-  fullName.vb: UltimateFolderPath.ResourceFolderPath.LoadAssets(Of T)()
-  nameWithType: ResourceFolderPath.LoadAssets<T>()
-  nameWithType.vb: ResourceFolderPath.LoadAssets(Of T)()
+- uid: UltimateFolderPath.ResourceFolderPath.LoadAssets``1(System.Boolean)
+  name: LoadAssets<T>(Boolean)
+  href: api/UltimateFolderPath.ResourceFolderPath.html#UltimateFolderPath_ResourceFolderPath_LoadAssets__1_System_Boolean_
+  commentId: M:UltimateFolderPath.ResourceFolderPath.LoadAssets``1(System.Boolean)
+  name.vb: LoadAssets(Of T)(Boolean)
+  fullName: UltimateFolderPath.ResourceFolderPath.LoadAssets<T>(System.Boolean)
+  fullName.vb: UltimateFolderPath.ResourceFolderPath.LoadAssets(Of T)(System.Boolean)
+  nameWithType: ResourceFolderPath.LoadAssets<T>(Boolean)
+  nameWithType.vb: ResourceFolderPath.LoadAssets(Of T)(Boolean)
 - uid: UltimateFolderPath.ResourceFolderPath.RelativeTo
   name: RelativeTo
   href: api/UltimateFolderPath.ResourceFolderPath.html#UltimateFolderPath_ResourceFolderPath_RelativeTo
