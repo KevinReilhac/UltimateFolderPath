@@ -11,8 +11,12 @@ namespace UltimateFolderPath
 
         private void Awake()
         {
-            Debug.Log(assetFolderPath.AbsolutePath);
-            Debug.Log(assetFolderPath.RelativePath);
+            List<GameObject> gos = assetFolderPath.LoadAssets<GameObject>();
+
+            foreach (GameObject go in gos)
+            {
+                Debug.Log(go.name);
+            }
         }
     }
 }
