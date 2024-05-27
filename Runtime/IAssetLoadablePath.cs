@@ -6,7 +6,7 @@ namespace UltimateFolderPath
 {
     public interface IAssetLoadableFolderPath
     {
-        List<T> LoadAssets<T>() where T : Object;
+        List<T> LoadAssets<T>(bool recursive = false) where T : Object;
         T LoadAsset<T>(string path) where T : Object;
     }
 }
