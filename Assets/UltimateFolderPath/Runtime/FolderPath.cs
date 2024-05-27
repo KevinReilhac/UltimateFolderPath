@@ -19,10 +19,12 @@ namespace UltimateFolderPath
         public string RelativePath => _path.ClearPath();
         public virtual string RelativeTo { get => null; }
 
-        public string[] GetAllFiles(bool relative = true)
+        public string[] GetAllFiles(bool relative = true, bool recursive = false)
         {
-            string[] files = Directory.GetFiles(AbsolutePath);
-            return files.Select(f => Path.GetRelativePath(RelativeTo, f)).ToArray();
+            SearchOption searchOption = recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+            string[] files = Directory.GetFiles(AbsolutePath, "*", searchOption);
+
+            return relative ? files.Select(f => Path.GetRelativePath(RelativeTo, f)).ToArray() : files;
         }
 
     }

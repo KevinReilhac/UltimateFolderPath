@@ -19,8 +19,13 @@ namespace UltimateFolderPath
             return Resources.Load<T>(Path.Join(RelativePath, path));
         }
 
-        public List<T> LoadAssets<T>() where T : Object
+        public List<T> LoadAssets<T>(bool recursive = false) where T : Object
         {
+            if (recursive)
+            {
+                Debug.LogWarning("Not implemented for now.");
+                return new List<T>();
+            }
             return Resources.LoadAll<T>(RelativePath).ToList();
         }
     }

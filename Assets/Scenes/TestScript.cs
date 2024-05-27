@@ -11,7 +11,7 @@ namespace UltimateFolderPath
 
         private void Awake()
         {
-            List<GameObject> gos = assetFolderPath.LoadAssets<GameObject>();
+            List<GameObject> gos = assetFolderPath.LoadAssets<GameObject>(recursive: true);
 
             foreach (GameObject go in gos)
             {

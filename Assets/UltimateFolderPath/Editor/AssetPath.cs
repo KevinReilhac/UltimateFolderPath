@@ -28,14 +28,16 @@ namespace UltimateFolderPath
             return Path.Join(AssetPath, fileName).ClearPath();
         }
 
-        public List<T> LoadAssets<T>() where T : Object
+        public List<T> LoadAssets<T>(bool recursive = false) where T : Object
         {
             List<T> assetList = new List<T>();
-            string[] files = GetAllFiles();
+            string[] files = GetAllFiles(false, recursive);
 
+            string cleanFileName = null;
             foreach (var file in files)
             {
-                T asset = AssetDatabase.LoadAssetAtPath<T>(GetAssetFilePath(Path.GetFileName(file)));
+                cleanFileName = file.Replace(AbsolutePath, "");
+                T asset = AssetDatabase.LoadAssetAtPath<T>(GetAssetFilePath(cleanFileName));
                 if (asset != null) assetList.Add(asset);
             }
 
