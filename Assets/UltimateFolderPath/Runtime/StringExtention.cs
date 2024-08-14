@@ -1,6 +1,3 @@
-using Unity.VisualScripting;
-using UnityEngine;
-
 namespace UltimateFolderPath
 {
     public static class StringExtention
