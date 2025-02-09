@@ -11,17 +11,19 @@ namespace UltimateFolderPath
     [System.Serializable]
     public class FolderPath
     {
-
+        #region Enums
         public enum ImageFormat
         {
             PNG,
             JPG,
         }
+        #endregion
 
+        #region Fields
         [SerializeField] private string _path = null;
+        #endregion
 
-        public FolderPath(string path) { this._path = path; }
-
+        #region Properties
         /// <summary>
         /// The absolute path of the folder.
         /// </summary>
@@ -36,8 +38,13 @@ namespace UltimateFolderPath
         /// What the path is relative to.
         /// /// </summary>
         public virtual string RelativeTo { get => null; }
+        #endregion
 
+        #region Constructor
+        public FolderPath(string path) { this._path = path; }
+        #endregion
 
+        #region File Operations
         /// <summary>
         /// Get all files paths in the folder.
         /// </summary>
@@ -88,62 +95,6 @@ namespace UltimateFolderPath
         }
 
         /// <summary>
-        /// /// Load a texture2D from a file.
-        /// </summary>
-        /// <param name="relativeFilePath">The path of the file (Relative).</param>
-        /// <returns>The texture2D of the file.</returns>
-        public Texture2D LoadTexture2DFromFile(string relativeFilePath)
-        {
-            byte[] bytes = GetBytesFromFile(relativeFilePath);
-
-            if (bytes == null)
-                return null;
-
-            Texture2D texture = new Texture2D(2, 2);
-            texture.LoadImage(bytes);
-            return texture;
-        }
-
-        /// <summary>
-        /// Load a sprite from a file.
-        /// </summary>
-        /// <param name="relativeFilePath">The path of the file (Relative).</param>
-        /// <returns>The sprite of the file.</returns>
-        public Sprite LoadSpriteFromFile(string relativeFilePath)
-        {
-            Texture2D texture = LoadTexture2DFromFile(relativeFilePath);
-            if (texture == null)
-
-                return null;
-
-            return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-        }
-
-        /// <summary>
-        /// Check if a sub folder exists.
-        /// </summary>
-        /// <param name="subFolderPath">The path of the sub folder (Relative).</param>
-        /// <returns>True if the sub folder exists, false otherwise.</returns>
-        public bool IsSubFolderExist(string subFolderPath)
-        {
-            string subFolderFullPath = Path.Combine(RelativeTo, subFolderPath);
-            return Directory.Exists(subFolderFullPath);
-        }
-
-
-        /// <summary>
-        /// Create a sub folder.
-        /// </summary>
-        /// <param name="subFolderPath">The path of the sub folder (Relative).</param>
-        public void CreateSubFolder(string subFolderPath)
-        {
-            string subFolderFullPath = Path.Combine(RelativeTo, subFolderPath);
-            if (Directory.Exists(subFolderFullPath))
-                return;
-            Directory.CreateDirectory(subFolderFullPath);
-        }
-
-        /// <summary>
         /// Write a file.
         /// </summary>
         /// <param name="relativeFilePath">The path of the file (Relative).</param>
@@ -180,6 +131,54 @@ namespace UltimateFolderPath
         }
 
         /// <summary>
+        /// /// Delete a file.
+        /// </summary>
+        /// <param name="relativeFilePath">The path of the file (Relative).</param>
+        /// <param name="fileName">The name of the file.</param>
+        public void DeleteFile(string relativeFilePath, string fileName)
+        {
+            string filePath = Path.Combine(RelativeTo, relativeFilePath, fileName);
+            if (File.Exists(filePath))
+                File.Delete(filePath);
+            else
+                Debug.LogError($"File at {filePath} does not exist");
+        }
+        #endregion
+
+        #region Image Operations
+        /// <summary>
+        /// /// Load a texture2D from a file.
+        /// </summary>
+        /// <param name="relativeFilePath">The path of the file (Relative).</param>
+        /// <returns>The texture2D of the file.</returns>
+        public Texture2D LoadTexture2DFromFile(string relativeFilePath)
+        {
+            byte[] bytes = GetBytesFromFile(relativeFilePath);
+
+            if (bytes == null)
+                return null;
+
+            Texture2D texture = new Texture2D(2, 2);
+            texture.LoadImage(bytes);
+            return texture;
+        }
+
+        /// <summary>
+        /// Load a sprite from a file.
+        /// </summary>
+        /// <param name="relativeFilePath">The path of the file (Relative).</param>
+        /// <returns>The sprite of the file.</returns>
+        public Sprite LoadSpriteFromFile(string relativeFilePath)
+        {
+            Texture2D texture = LoadTexture2DFromFile(relativeFilePath);
+            if (texture == null)
+
+                return null;
+
+            return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+        }
+
+        /// <summary>
         /// /// Write an image to a file.
         /// </summary>
         /// <param name="relativeFilePath">The path of the file (Relative).</param>
@@ -192,19 +191,31 @@ namespace UltimateFolderPath
 
             WriteFile(relativeFilePath, fileName, bytes);
         }
+        #endregion
+
+        #region Folder Operations
+        /// <summary>
+        /// Check if a sub folder exists.
+        /// </summary>
+        /// <param name="subFolderPath">The path of the sub folder (Relative).</param>
+        /// <returns>True if the sub folder exists, false otherwise.</returns>
+        public bool IsSubFolderExist(string subFolderPath)
+        {
+            string subFolderFullPath = Path.Combine(RelativeTo, subFolderPath);
+            return Directory.Exists(subFolderFullPath);
+        }
+
 
         /// <summary>
-        /// /// Delete a file.
+        /// Create a sub folder.
         /// </summary>
-        /// <param name="relativeFilePath">The path of the file (Relative).</param>
-        /// <param name="fileName">The name of the file.</param>
-        public void DeleteFile(string relativeFilePath, string fileName)
+        /// <param name="subFolderPath">The path of the sub folder (Relative).</param>
+        public void CreateSubFolder(string subFolderPath)
         {
-            string filePath = Path.Combine(RelativeTo, relativeFilePath, fileName);
-            if (File.Exists(filePath))
-                File.Delete(filePath);
-            else
-                Debug.LogError($"File at {filePath} does not exist");
+            string subFolderFullPath = Path.Combine(RelativeTo, subFolderPath);
+            if (Directory.Exists(subFolderFullPath))
+                return;
+            Directory.CreateDirectory(subFolderFullPath);
         }
 
         /// <summary>
@@ -221,7 +232,10 @@ namespace UltimateFolderPath
             else
                 Debug.LogError($"Folder at {folderPath} does not exist");
         }
+        #endregion
 
+        #region Operators
         public static implicit operator FolderPath(string path) => new FolderPath(path);
+        #endregion
     }
 }

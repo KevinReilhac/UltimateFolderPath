@@ -12,13 +12,15 @@ namespace UltimateFolderPath.Editor
     [System.Serializable]
     public class EditorResourcePath : ProjectFolderPath, IAssetLoadableFolderPath
     {
-        public EditorResourcePath(string path) : base(path)
-        {
-
-        }
-
+        #region Properties
         public override string RelativeTo => Path.Join(Application.dataPath, "Editor Default Resources").ClearPath();
+        #endregion
 
+        #region Constructor
+        public EditorResourcePath(string path) : base(path) { }
+        #endregion
+
+        #region Asset Loading
         /// <summary>
         /// Load an asset from the editor default resources folder.
         /// With EditorGUIUtility.Load, you can load an asset from the editor default resources folder.
@@ -59,7 +61,10 @@ namespace UltimateFolderPath.Editor
 
             return assetList;
         }
+        #endregion
 
+        #region Operators
         public static implicit operator EditorResourcePath(string path) => new EditorResourcePath(path);
+        #endregion
     }
 }
