@@ -2,9 +2,13 @@ apiRules:
 - include:
     uidRegex: ^UltimateFolderPath
     type: Namespace
+- include:
+    uidRegex: ^UltimateFolderPath.Editor
+    type: Namespace
 - exclude:
     uidRegex: ^UltimateFolderPath.TypeWriters
     type: Namespace
+
 - exclude:
     uidRegex: .*
     type: Namespace
