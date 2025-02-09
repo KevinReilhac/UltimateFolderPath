@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -68,6 +69,12 @@ namespace UltimateFolderPath
             string relativeTo = RelativeTo(property);
             string result = null;
 
+            if (!Directory.Exists(relativeTo))
+            {
+                if (!ProposeCreateFolder(relativeTo))
+                    return;
+            }
+
             if (relativeTo != null)
             {
                 result = EditorUtility.OpenFolderPanel(label, relativeTo, "");
@@ -86,9 +93,23 @@ namespace UltimateFolderPath
             if (string.IsNullOrEmpty(result)) return;
             property.FindPropertyRelative(PATH_PROPERTY).stringValue = result;
             property.serializedObject.ApplyModifiedProperties();
+            AssetDatabase.Refresh();
+        }
+
+        private bool ProposeCreateFolder(string relativeTo)
+        {
+            string folder = relativeTo.Split('/').Last();
+            if (EditorUtility.DisplayDialog("Folder does not exist", $"The {folder} folder does not exist. Do you want to create it?", "Yes", "No"))
+            {
+                Directory.CreateDirectory(relativeTo);
+                return true;
+            }
+            return false;
         }
 
         private string RelativeTo(SerializedProperty property)
+
+
         {
             FolderPath instance = GetInstance(property);
 

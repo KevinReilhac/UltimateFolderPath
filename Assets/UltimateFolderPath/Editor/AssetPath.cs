@@ -24,7 +24,7 @@ namespace UltimateFolderPath.Editor
         #region Asset Loading
         /// <summary>
         /// Load an asset from the asset folder.
-        /// /// Use AssetDatabase.LoadAssetAtPath to load the asset.
+        /// Use AssetDatabase.LoadAssetAtPath to load the asset.
         /// </summary>
         /// <typeparam name="T">The type of the asset.</typeparam>
         /// <param name="path">The path of the asset (extention is needed).</param>

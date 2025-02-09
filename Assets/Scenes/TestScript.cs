@@ -24,12 +24,15 @@ namespace UltimateFolderPath
     public class TestScript : MonoBehaviour
     {
 
-#region Runtime
+        #region Runtime
+
         public ResourceFolderPath resourcesFolderPath = "Prefabs";
         public StreamingAssetsPath streamingAssetsFolderPath = "Textures";
 
         private void RuntimeMethod()
         {
+            //You can access the absolute path, relative path, and relative to path of the folder path.
+
             Debug.Log(resourcesFolderPath.AbsolutePath);
             // -> C:\Users\User\Documents\Unity\UnityProject\Assets\Resources\Prefabs
             Debug.Log(resourcesFolderPath.RelativePath);
@@ -37,23 +40,24 @@ namespace UltimateFolderPath
             Debug.Log(resourcesFolderPath.RelativeTo);
             // -> C:\Users\User\Documents\Unity\UnityProject\Assets\Resources
 
+            //You can load assets from the folder path.
             //Load a prefab (Prefab1) from the resources folder (in Assets/Resources/Prefabs/PrefabType)
             PrefabType prefabType = resourcesFolderPath.LoadAsset<PrefabType>("Prefabs/Prefab1");
 
             //Load a sprite from the streaming assets folder (Assets/StreamingAssets/Textures/Texture.png)
             Sprite sprite = streamingAssetsFolderPath.LoadSpriteFromFile("Texture.png");
         }
-#endregion
+        #endregion
 
-#region Editor
+        #region Editor
         public AssetFolderPath assetFolderPath = "Data/DesignData";
         public ProjectFolderPath projectFolderPath = "ProjectSubFolder";
         public EditorResourcePath editorResourcePath = "EditorDesignData";
 
         private void EditorMethod()
         {
-            //Load a design data (Level1) from the asset folder (in Assets/Data/DesignData/Level1)
-            DesignData designData = assetFolderPath.LoadAsset<DesignData>("Level1");
+            //Load all design data from the asset folder (in Assets/Data/DesignData)
+            List<DesignData> designDataList = assetFolderPath.LoadAssets<DesignData>();
 
             //Create a new folder in the project folder ([ProjectRoot]/ProjectSubFolder/NewFolder)
             projectFolderPath.CreateSubFolder("NewFolder");
@@ -61,6 +65,6 @@ namespace UltimateFolderPath
             //Load an editor design data (EditorLevel1) from the editor resource folder (in Assets/EditorDefaultResources/EditorDesignData/EditorLevel1)
             EditorDesignData editorDesignData = editorResourcePath.LoadAsset<EditorDesignData>("EditorLevel1");
         }
-#endregion
+        #endregion
     }
 }

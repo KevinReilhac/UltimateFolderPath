@@ -9,6 +9,8 @@ namespace UltimateFolderPath
     /// A folder path relative to the resource folder.
     /// Use Resources.Load to load an asset from the resource folder.
     /// </summary>
+    ///
+    [System.Serializable]
     public class ResourceFolderPath : FolderPath, IAssetLoadableFolderPath
     {
         #region Properties
