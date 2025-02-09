@@ -6,33 +6,30 @@ using UnityEngine;
 namespace UltimateFolderPath.Editor
 {
     /// <summary>
-    /// A folder path relative to the asset folder that can load assets.
-    /// Use AssetDatabase.LoadAssetAtPath to load an asset from the asset folder.
+    /// A folder path relative to the editor default resources folder that can load assets.
+    /// Use EditorGUIUtility.Load to load an asset from the editor default resources folder.
     /// </summary>
     [System.Serializable]
-    public class AssetFolderPath : ProjectFolderPath, IAssetLoadableFolderPath
-
-
-
+    public class EditorResourcePath : ProjectFolderPath, IAssetLoadableFolderPath
     {
-        public AssetFolderPath(string path) : base(path)
+        public EditorResourcePath(string path) : base(path)
         {
+
         }
 
-        public override string RelativeTo => Application.dataPath;
+        public override string RelativeTo => Path.Join(Application.dataPath, "Editor Default Resources").ClearPath();
 
         /// <summary>
-        /// Load an asset from the asset folder.
-        /// /// Use AssetDatabase.LoadAssetAtPath to load the asset.
+        /// Load an asset from the editor default resources folder.
+        /// With EditorGUIUtility.Load, you can load an asset from the editor default resources folder.
         /// </summary>
         /// <typeparam name="T">The type of the asset.</typeparam>
         /// <param name="path">The path of the asset (extention is needed).</param>
         /// <returns>The asset.</returns>
         public T LoadAsset<T>(string path) where T : Object
         {
-            string fullPath = GetAssetFilePath(path);
-
-            T asset = AssetDatabase.LoadAssetAtPath<T>(fullPath);
+            string fullPath = Path.Join(RelativePath, path).ClearPath();
+            T asset = EditorGUIUtility.Load(fullPath) as T;
             if (asset == null)
             {
                 if (path.Contains("."))
@@ -40,47 +37,29 @@ namespace UltimateFolderPath.Editor
                 else
                     Debug.LogError($"Asset not found: {fullPath}");
             }
-
             return asset;
         }
 
-
-        public string AssetPath => Path.Join("Assets", RelativePath).ClearPath();
-
         /// <summary>
-        /// Get the full path of the asset file.
-        /// </summary>
-        /// <param name="fileName">The name of the asset file.</param>
-        /// <returns>The full path of the asset file.</returns>
-        public string GetAssetFilePath(string fileName)
-        {
-            return Path.Join(AssetPath, fileName).ClearPath();
-        }
-
-        /// <summary>
-        /// Load all assets from the asset folder.
+        /// Load all assets from the editor default resources folder.
         /// </summary>
         /// <typeparam name="T">The type of the asset.</typeparam>
         /// <param name="recursive">If true, the assets will be loaded recursively.</param>
         /// <returns>The assets.</returns>
         public List<T> LoadAssets<T>(bool recursive = false) where T : Object
-
-
         {
             List<T> assetList = new List<T>();
             string[] files = GetAllFiles(false, recursive);
 
-            string cleanFileName = null;
             foreach (var file in files)
             {
-                cleanFileName = file.Replace(AbsolutePath, "");
-                T asset = AssetDatabase.LoadAssetAtPath<T>(GetAssetFilePath(cleanFileName));
+                T asset = LoadAsset<T>(file);
                 if (asset != null) assetList.Add(asset);
             }
 
             return assetList;
         }
 
-        public static implicit operator AssetFolderPath(string path) => new AssetFolderPath(path);
+        public static implicit operator EditorResourcePath(string path) => new EditorResourcePath(path);
     }
 }
