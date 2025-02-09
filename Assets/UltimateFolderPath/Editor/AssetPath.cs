@@ -11,16 +11,17 @@ namespace UltimateFolderPath.Editor
     /// </summary>
     [System.Serializable]
     public class AssetFolderPath : ProjectFolderPath, IAssetLoadableFolderPath
-
-
-
     {
-        public AssetFolderPath(string path) : base(path)
-        {
-        }
-
+        #region Properties
         public override string RelativeTo => Application.dataPath;
+        public string AssetPath => Path.Join("Assets", RelativePath).ClearPath();
+        #endregion
 
+        #region Constructor
+        public AssetFolderPath(string path) : base(path) { }
+        #endregion
+
+        #region Asset Loading
         /// <summary>
         /// Load an asset from the asset folder.
         /// /// Use AssetDatabase.LoadAssetAtPath to load the asset.
@@ -44,19 +45,6 @@ namespace UltimateFolderPath.Editor
             return asset;
         }
 
-
-        public string AssetPath => Path.Join("Assets", RelativePath).ClearPath();
-
-        /// <summary>
-        /// Get the full path of the asset file.
-        /// </summary>
-        /// <param name="fileName">The name of the asset file.</param>
-        /// <returns>The full path of the asset file.</returns>
-        public string GetAssetFilePath(string fileName)
-        {
-            return Path.Join(AssetPath, fileName).ClearPath();
-        }
-
         /// <summary>
         /// Load all assets from the asset folder.
         /// </summary>
@@ -64,8 +52,6 @@ namespace UltimateFolderPath.Editor
         /// <param name="recursive">If true, the assets will be loaded recursively.</param>
         /// <returns>The assets.</returns>
         public List<T> LoadAssets<T>(bool recursive = false) where T : Object
-
-
         {
             List<T> assetList = new List<T>();
             string[] files = GetAllFiles(false, recursive);
@@ -80,7 +66,22 @@ namespace UltimateFolderPath.Editor
 
             return assetList;
         }
+        #endregion
 
+        #region Path Utilities
+        /// <summary>
+        /// Get the full path of the asset file.
+        /// </summary>
+        /// <param name="fileName">The name of the asset file.</param>
+        /// <returns>The full path of the asset file.</returns>
+        public string GetAssetFilePath(string fileName)
+        {
+            return Path.Join(AssetPath, fileName).ClearPath();
+        }
+        #endregion
+
+        #region Operators
         public static implicit operator AssetFolderPath(string path) => new AssetFolderPath(path);
+        #endregion
     }
 }

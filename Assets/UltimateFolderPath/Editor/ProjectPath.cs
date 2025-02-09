@@ -10,20 +10,24 @@ namespace UltimateFolderPath.Editor
     /// </summary>
     [System.Serializable]
     public class ProjectFolderPath : FolderPath
-
     {
-
-        public ProjectFolderPath(string path) : base(path)
-        {
-        }
-
+        #region Properties
         public override string RelativeTo => GetProjectFolder();
+        #endregion
 
+        #region Constructor
+        public ProjectFolderPath(string path) : base(path) { }
+        #endregion
+
+        #region Path Utilities
         private string GetProjectFolder()
         {
             return string.Join("/", Application.dataPath.Split('\\', '/').SkipLast(1));
         }
+        #endregion
 
+        #region Operators
         public static implicit operator ProjectFolderPath(string path) => new ProjectFolderPath(path);
+        #endregion
     }
 }

@@ -10,14 +10,19 @@ namespace UltimateFolderPath
     [CustomPropertyDrawer(typeof(FolderPath), true)]
     internal class PathPropertyDrawer : PropertyDrawer
     {
+        #region Constants
         private const string BUTTON_ICON_NAME = "d_Folder Icon";
         private const string PATH_PROPERTY = "_path";
-
         private const float BUTTON_WITH = 30f;
+        #endregion
+
+        #region Fields
         private static readonly Color errorColor = Color.red;
         private string lastCheckedPath = null;
         private bool checkedValue = true;
+        #endregion
 
+        #region GUI Drawing
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             SerializedProperty pathProperty = property.FindPropertyRelative(PATH_PROPERTY);
@@ -55,7 +60,9 @@ namespace UltimateFolderPath
             GUI.backgroundColor = defaultColor;
             GUI.enabled = true;
         }
+        #endregion
 
+        #region Folder Operations
         private void OpenFolder(SerializedProperty property, string label)
         {
             string relativeTo = RelativeTo(property);
@@ -96,7 +103,9 @@ namespace UltimateFolderPath
                 return false;
             return Directory.Exists(folderPath.AbsolutePath);
         }
+        #endregion
 
+        #region Utilities
         private FolderPath GetInstance(SerializedProperty property)
         {
             var targetObject = property.serializedObject.targetObject;
@@ -110,6 +119,6 @@ namespace UltimateFolderPath
 
             return null;
         }
-
+        #endregion
     }
 }

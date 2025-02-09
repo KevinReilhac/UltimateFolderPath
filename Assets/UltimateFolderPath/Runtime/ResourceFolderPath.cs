@@ -10,18 +10,16 @@ namespace UltimateFolderPath
     /// Use Resources.Load to load an asset from the resource folder.
     /// </summary>
     public class ResourceFolderPath : FolderPath, IAssetLoadableFolderPath
-
-
     {
-        public ResourceFolderPath(string path) : base(path)
-        {
-        }
-
-        /// <summary>
-        /// The relative path of the resource folder.
-        /// </summary>
+        #region Properties
         public override string RelativeTo => Path.Join(Application.dataPath, "Resources");
+        #endregion
 
+        #region Constructor
+        public ResourceFolderPath(string path) : base(path) { }
+        #endregion
+
+        #region Asset Loading
         /// <summary>
         /// Load an asset from the resource folder.
         /// </summary>
@@ -33,7 +31,6 @@ namespace UltimateFolderPath
             return Resources.Load<T>(Path.Join(RelativePath, path));
         }
 
-
         /// <summary>
         /// /// Load all assets from the resource folder.
         /// </summary>
@@ -41,7 +38,6 @@ namespace UltimateFolderPath
         /// <param name="recursive">If true, the assets will be loaded recursively.</param>
         /// <returns>A list of assets.</returns>
         public List<T> LoadAssets<T>(bool recursive = false) where T : Object
-
         {
             if (recursive)
             {
@@ -50,7 +46,10 @@ namespace UltimateFolderPath
             }
             return Resources.LoadAll<T>(RelativePath).ToList();
         }
+        #endregion
 
+        #region Operators
         public static implicit operator ResourceFolderPath(string path) => new ResourceFolderPath(path);
+        #endregion
     }
 }
